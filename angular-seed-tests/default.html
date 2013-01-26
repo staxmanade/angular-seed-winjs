@@ -107,38 +107,50 @@
                 };
             })();
 
-            addJSFilesToDom("angular-seed/lib/angular")
-                .then(function () {
-                    return addJSFilesToDom("angular-seed/js")
-                })
-                .then(function () {
-                    return addJSFilesToDom("tests")
-                })
-                .then(function () {
+            var directoriesToLoad = [
+                "angular-seed/lib/angular",
+                "angular-seed/js",
+                "tests",
+            ];
 
-                    (function () {
-                        var jasmineEnv = jasmine.getEnv();
-                        jasmineEnv.updateInterval = 1000;
+            function chain(items, asyncFunc) {
+                var currDfr = WinJS.Promise.as(true);
 
-                        var htmlReporter = new jasmine.HtmlReporter();
+                for (var i = 0; i < items.length; i++) {
+                    currDfr = (function (dfr, value) {
+                        return dfr.then(function () {
+                            return asyncFunc(value);
+                        });
+                    })(currDfr, items[i]);
+                }
+                return currDfr;
+            }
 
-                        jasmineEnv.addReporter(htmlReporter);
+            chain(directoriesToLoad, function (value) {
+                return addJSFilesToDom(value);
+            })
+            .then(function () {
 
-                        jasmineEnv.specFilter = function (spec) {
-                            return htmlReporter.specFilter(spec);
-                        };
+                (function () {
+                    var jasmineEnv = jasmine.getEnv();
+                    jasmineEnv.updateInterval = 1000;
 
-                        jasmineEnv.execute();
+                    var htmlReporter = new jasmine.HtmlReporter();
 
-                    })();
-                })
+                    jasmineEnv.addReporter(htmlReporter);
+
+                    jasmineEnv.specFilter = function (spec) {
+                        return htmlReporter.specFilter(spec);
+                    };
+
+                    jasmineEnv.execute();
+
+                })();
+            })
         })();
-
-
     </script>
-
 </head>
-
 <body>
+
 </body>
 </html>
