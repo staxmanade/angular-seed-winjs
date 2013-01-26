@@ -71,38 +71,23 @@
     <Content Include="..\app\lib\angular\angular-cookies.js">
       <Link>angular-seed\lib\angular\angular-cookies.js</Link>
     </Content>
-    <Content Include="..\app\lib\angular\angular-cookies.min.js">
-      <Link>angular-seed\lib\angular\angular-cookies.min.js</Link>
-    </Content>
     <Content Include="..\app\lib\angular\angular-loader.js">
       <Link>angular-seed\lib\angular\angular-loader.js</Link>
-    </Content>
-    <Content Include="..\app\lib\angular\angular-loader.min.js">
-      <Link>angular-seed\lib\angular\angular-loader.min.js</Link>
     </Content>
     <Content Include="..\app\lib\angular\angular-resource.js">
       <Link>angular-seed\lib\angular\angular-resource.js</Link>
     </Content>
-    <Content Include="..\app\lib\angular\angular-resource.min.js">
-      <Link>angular-seed\lib\angular\angular-resource.min.js</Link>
-    </Content>
     <Content Include="..\app\lib\angular\angular-sanitize.js">
       <Link>angular-seed\lib\angular\angular-sanitize.js</Link>
     </Content>
-    <Content Include="..\app\lib\angular\angular-sanitize.min.js">
-      <Link>angular-seed\lib\angular\angular-sanitize.min.js</Link>
-    </Content>
     <Content Include="..\app\lib\angular\angular.js">
       <Link>angular-seed\lib\angular\angular.js</Link>
-    </Content>
-    <Content Include="..\app\lib\angular\angular.min.js">
-      <Link>angular-seed\lib\angular\angular.min.js</Link>
     </Content>
     <Content Include="..\test\lib\angular\angular-mocks.js">
       <Link>tests\lib\angular-mocks.js</Link>
     </Content>
     <Content Include="..\test\lib\angular\angular-scenario.js">
-      <Link>tests\lib\angular-scenario.js</Link>
+      <Link>tests\lib\angular-scenario.js.FOO</Link>
     </Content>
     <Content Include="..\test\unit\controllersSpec.js">
       <Link>tests\unit\controllersSpec.js</Link>
